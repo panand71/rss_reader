@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   resources :entries
   resources :feeds
   root       'entries#index'

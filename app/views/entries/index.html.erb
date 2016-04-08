@@ -10,7 +10,8 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= link_to entry.title, entry.url, target: "_blank" %></td>        
+        <td><%= link_to entry.title, entry.url, target: "_blank" %></td>
+        <td><button class="btn btn-default btn-xs" style="display: inline;" type="submit"><i class="fa fa-star-o"></td>        
       </tr>
     <% end %>
   </tbody>
