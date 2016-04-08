@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  root       'headlines#index'
+  resources :entries
+  resources :feeds
+  root       'entries#index'
   devise_for :users
-  resources  :headlines
   
 end
