@@ -3,7 +3,7 @@ describe User do
 
   scenario "when providing valid details" do
     visit "/"
-    click_link "Sign up"
+    click_link "Sign Up"
     fill_in "Email", with: "test@example.com"
     fill_in "user_password", with: "passwords"
     fill_in "Password confirmation", with: "passwords"
@@ -13,7 +13,7 @@ describe User do
 
   scenario "when providing invalid details" do
     visit "/"
-    click_link "Sign up"
+    click_link "Sign Up"
     fill_in "Email", with: "test@example.com"
     fill_in "user_password", with: "pass"
     fill_in "Password confirmation", with: "words"
@@ -28,17 +28,20 @@ describe User do
 
   scenario "when providing valid login credentials" do
     visit "/"
-    click_link "Log in"
-    fill_in "Email", with: "test@example.com"
+    click_link "Log In"
+    fill_in "Email", with: "user@example.com"
     fill_in "user_password", with: "passwords"
     click_button "Log in"
-    expect(page).to have_content("Invalid email or password")
+    expect(page).to have_content("Signed in successfully")
+    click_link "Log Out"
+    expect(page).to have_content("Signed out successfully")
+
   end
 
   scenario "when providing valid login credentials" do
     visit "/"
-    click_link "Log Out"
-    expect(page).to have_content("Signed out successfully")
+    # click_link "Log Out"
+    # expect(page).to have_content("Signed out successfully")
   end  
 
 end
