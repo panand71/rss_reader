@@ -1,4 +1,10 @@
-FactoryGirl.define do
+FactoryGirl.define do  factory :entry do
+    
+  end
+  factory :feed do
+    
+  end
+
   factory :user do
     email 'test@example.com'
     password 'f4k3p455w0rd'
