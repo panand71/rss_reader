@@ -6,9 +6,33 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+  <nav class="navbar navbar-default stitchfix">
+    <h1>RSS Reader</h1>
+  <div class="collapse navbar-collapse navbar-ex1-collapse">    
+    <ul class="nav nav-pills"> 
+      <li class="<%#= 'active' if current_page?(root_path || clearance_batches_path) %>"> <%= link_to "Home", root_path %></li>
+      <li class="<%#= 'active' if current_page?(root_path || clearance_batches_path) %>"> <%= link_to "Log Out", destroy_user_session_path,  method: :delete %></li>      
+      <li class="<%#= 'active' if current_page?(items_path) %>"> <%#= link_to "Items", items_path %></li>
+    </ul>
+  </div>
+  </nav>   
+</head>
 <body>
+  <div class="container">  
+    <% if flash[:notice] %>
+    <div class="alert alert-info" role="alert">
+      <%= flash[:notice].html_safe %>
+    </div>
+    <% end %>
+    <% if flash[:alert] %>
+    <div class="alert alert-danger" role="alert">
+      <%= flash[:alert].html_safe %>
+    </div>
+    <% end %>
+    <%= yield %>
+  </div>
 
-<%= yield %>
 
 </body>
+
 </html>
