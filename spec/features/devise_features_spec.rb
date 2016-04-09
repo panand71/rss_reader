@@ -38,10 +38,4 @@ describe User do
 
   end
 
-  scenario "when providing valid login credentials" do
-    visit "/"
-    # click_link "Log Out"
-    # expect(page).to have_content("Signed out successfully")
-  end  
-
 end
