@@ -1,4 +1,7 @@
-FactoryGirl.define do  factory :entry do
+FactoryGirl.define do  factory :favorite do
+    
+  end
+  factory :entry do
     
   end
   factory :feed do

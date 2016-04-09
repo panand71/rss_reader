@@ -23,7 +23,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <% if current_user %>
-          <li><%= link_to "Favorites", root_path %></li>          
+          <li><%= link_to "Favorites", favorites_path %></li>          
           <li><%= link_to "Log Out", destroy_user_session_path,  method: :delete %></li>
           <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>

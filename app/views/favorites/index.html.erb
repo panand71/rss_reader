@@ -1,0 +1,22 @@
+<h1><%= current_user.email %>'s <%= current_user.favorites.count %> Favorite Articles</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @favorites.each do |fave| %>
+      <tr>
+        <td><%= fave.entry.try! :title %></td>
+        <td><%= (fave.entry.try! :created_at).to_date.to_formatted_s(:long) %></td>
+        <td><%= link_to 'Destroy', fave, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<br>
+

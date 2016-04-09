@@ -1,4 +1,22 @@
-<p id="notice"><%= notice %></p>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+  <tbody>
+    <tr>
+      <td><%= @entry.title %></td>
+      <td><%= (@entry.created_at).to_date.to_formatted_s(:long) %></td>
+      <% if current_user %>
+      <td><%= form_tag(controller: "entries", action: "favorite", method: "post") do %>
+          <%= submit_tag "Favorite", class: "btn btn-primary"%></td> 
+      <% end %> 
+      <% end %>    
+    </tr>   
+  </tbody>
+</table>
+
+
+
