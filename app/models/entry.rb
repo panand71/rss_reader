@@ -5,6 +5,7 @@ class Entry < ActiveRecord::Base
   has_many :users, through: :favorites
 
   def self.update_from_feed(feed_url)
+    feed_url = "http://rss.cnn.com/rss/cnn_topstories.rss"
     feed = Feedjira::Feed.fetch_and_parse(feed_url)
     feed.entries.each do |entry|
       create!(title: entry.title, url: entry.url)
