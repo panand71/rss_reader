@@ -1,5 +1,7 @@
 require 'rails_helper'
+
 describe User do
+  let!(:entry_1) { FactoryGirl.create(:entry) }
 
   scenario "when providing valid details" do
     visit "/"
@@ -35,7 +37,15 @@ describe User do
     expect(page).to have_content("Signed in successfully")
     click_link "Log Out"
     expect(page).to have_content("Signed out successfully")
+  end
 
+  scenario "when a user tries to reset password" do
+    visit "/"
+    click_link "Log In"
+    click_link "Forgot your password?"
+    fill_in "Email", with: "user@example.com"
+    click_button "Send me reset password instructions"
+    expect(page).to have_content("You will receive an email with instructions on how to reset your password in a few minutes.")
   end
 
 end
