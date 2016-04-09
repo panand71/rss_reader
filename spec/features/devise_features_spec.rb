@@ -1,5 +1,7 @@
 require 'rails_helper'
+
 describe User do
+  let!(:entry_1) { FactoryGirl.create(:entry) }
 
   scenario "when providing valid details" do
     visit "/"

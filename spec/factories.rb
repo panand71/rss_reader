@@ -1,10 +1,12 @@
-FactoryGirl.define do  factory :favorite do
-    
-  end
+FactoryGirl.define do  
+
   factory :entry do
-    
+    title 'New Healine'
+    url 'http://headlines.com'
+    created_at "2016-04-09 17:45:32"  
   end
-  factory :feed do
+
+  factory :favorite do
     
   end
 
