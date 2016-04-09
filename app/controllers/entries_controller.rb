@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   before_action :set_entry, only: [:show, :edit, :update, :destroy, :favorite]
 
   def index
-    @entries = Entry.all
+    @entries = Entry.order('created_at ASC')
   end
 
   def show
