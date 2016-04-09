@@ -1,4 +1,4 @@
-<h1>CNN Headlines</h1>
+<h1>CNN Headlines</h1><h4>Updated <%=time_ago_in_words(@entries.last.created_at)%> ago</h4>
 
 <table class="table table-hover">
   <thead>
@@ -12,7 +12,8 @@
     <tr>
 
       <td><%= link_to entry.title, entry.url, target: "_blank" %></td>
-      <td><%= link_to 'View Story', entry %></td>
+      <td><%= entry.created_at.to_date.to_formatted_s(:long) %></td>
+      <td><%= link_to 'Add to Favorites', entry %></td>
     </tr>
     <% end %>   
   </tbody>

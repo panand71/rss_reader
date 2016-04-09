@@ -7,9 +7,10 @@ class Entry < ActiveRecord::Base
   def self.update_from_feed
     feed = Feedjira::Feed.fetch_and_parse("http://rss.cnn.com/rss/cnn_topstories.rss")
     feed.entries.each do |entry|
-      create!(title: entry.title, url: entry.url)
+      unless exists? title: entry.title
+        create!(title: entry.title, url: entry.url)
+      end
     end
   end
-
 
 end
