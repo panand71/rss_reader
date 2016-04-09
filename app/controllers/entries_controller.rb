@@ -57,11 +57,11 @@ class EntriesController < ApplicationController
   
   private
 
-  def set_entry
-    @entry = Entry.find(params[:id])
-  end
-
-  def entry_params
-    params.fetch(:entry, {})
-  end
+    def set_entry
+      @entry = Entry.find(params[:id])
+    end
+  
+    def entry_params
+      params.fetch(:entry, {})
+    end
 end
