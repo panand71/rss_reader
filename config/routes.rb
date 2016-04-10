@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :favorites
+
   resources :entries 
+
   post 'entries/:id/favorite' => 'entries#favorite'
 
   

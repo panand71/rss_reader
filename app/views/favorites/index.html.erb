@@ -11,7 +11,7 @@
       <tr>
         <td><%= fave.entry.try! :title %></td>
         <td><%= (fave.entry.created_at).to_date.to_formatted_s(:long) %></td>
-        <td><%= link_to 'Destroy', fave, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete Story', fave, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
   </tbody>

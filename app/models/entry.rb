@@ -4,6 +4,8 @@ class Entry < ActiveRecord::Base
   has_many :favorites
   has_many :users, through: :favorites
 
+  validates :title, uniqueness: true
+
   def self.update_from_feed
     feed = Feedjira::Feed.fetch_and_parse("http://rss.cnn.com/rss/cnn_topstories.rss")
     feed.entries.each do |entry|
