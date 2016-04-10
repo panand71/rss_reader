@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe "entries/index", type: :view do
   before(:each) do
     assign(:entries, [
-      Entry.create!(),
-      Entry.create!()
+      Entry.create!(title: "Third Headline"),
+      Entry.create!(title: "Fourth Headline")
     ])
   end
 

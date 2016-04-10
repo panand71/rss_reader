@@ -13,11 +13,13 @@ class FavoritesController < ApplicationController
 
   def show
   end
+  
+  # def create
+  #   @entry = Entry.find(params[:entry_id])
+  #   @favorite = @entry.favorites.build(user_id: current_user.id)
+  #   @favorite.save
+  # end
 
-  def create
-    # current_user.favorites.create(entry_id: params[:entry_id])
-    # render layout: false
-  end
 
   def destroy
     @favorite.destroy
