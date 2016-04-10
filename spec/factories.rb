@@ -1,7 +1,7 @@
 FactoryGirl.define do  
 
   factory :entry do
-    title 'New Healine'
+    title 'New Headline'
     url 'http://headlines.com'
     created_at "2016-04-09 17:45:32"  
   end
