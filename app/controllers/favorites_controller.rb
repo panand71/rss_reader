@@ -4,7 +4,7 @@ class FavoritesController < ApplicationController
 
 
   def index
-    @favorites = current_user.favorites
+    @favorites = current_user.favorites.includes(:entry)
   end
 
   def new
